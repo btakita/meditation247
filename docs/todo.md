@@ -12,3 +12,4 @@
 # Finished
 
 * Calendar for meditation leaders (30 minute slots) - with link
+* Tinychat Meditation247 room
