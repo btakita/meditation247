@@ -16,6 +16,10 @@ body {
   background: url(/img/lotus.jpg);
 }
 
+iframe {
+  width: 100%;
+}
+
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -62,6 +66,12 @@ textarea {
 
 body {
   font: 16px/26px Helvetica, Helvetica Neue, Arial;
+}
+
+section {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: antiquewhite;
 }
 
 .wrapper {
