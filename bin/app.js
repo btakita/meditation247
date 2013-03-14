@@ -5,11 +5,13 @@ var _ = require("underscore")._
   , connect = require('connect')
   , path = require('path')
   , app = global.app = express()
-  , config = require('./config')
-  , routes = require('./routes')
+  , config = require('../config')
+  , routes = require('../routes')
   ;
 
-var ctx = {};
+var ctx = {
+  rootDir: __dirname + "/.."
+};
 
 function main() {
   appConfigure();
@@ -24,13 +26,13 @@ function appConfigure() {
     app.set("config", config);
     app.set('port', config.port);
     app.use(connect.compress());
-    app.use(express.favicon(__dirname + '/public/favicon.ico'));
+    app.use(express.favicon(ctx.rootDir + '/public/favicon.ico'));
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(xLog());
     app.use(app.router);
-    app.use(express.static(path.join(__dirname, 'public')));
+    app.use(express.static(path.join(ctx.rootDir, 'public')));
     app.use(handleRequestErrors);
   });
 }

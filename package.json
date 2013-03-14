@@ -1,9 +1,9 @@
 {
   "name": "meditation247",
-  "version": "0.1.0",
+  "version": "0.1.0-2",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "start": "bin/app.js"
   },
   "engines": {
     "node": "0.8.x",
@@ -23,5 +23,6 @@
     "request": "2.11.4",
     "underscore": "1.4.4",
     "underscore.string": "2.3.1"
-  }
+  },
+  "subdomain": "meditation247"
 }
