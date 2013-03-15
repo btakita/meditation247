@@ -1,6 +1,11 @@
 {
   "name": "meditation247",
-  "version": "0.1.0-2",
+  "subdomain": "meditation247",
+  "domains": [
+    "meditation247.org",
+    "www.meditation247.org"
+  ],
+  "version": "0.1.0-4",
   "private": true,
   "scripts": {
     "start": "bin/app.js"
@@ -23,6 +28,5 @@
     "request": "2.11.4",
     "underscore": "1.4.4",
     "underscore.string": "2.3.1"
-  },
-  "subdomain": "meditation247"
+  }
 }
