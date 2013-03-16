@@ -7,6 +7,7 @@ var _ = require("underscore")._
   , app = global.app = express()
   , config = require('../config')
   , routes = require('../routes')
+  , cluster = require("cluster")
   ;
 
 var ctx = {
@@ -14,11 +15,28 @@ var ctx = {
 };
 
 function main() {
-  appConfigure();
-  onUncaughtException();
-  onSigterm();
-  routesAttach();
-  createServer();
+  if (cluster.isMaster) {
+    // Count the machine's CPUs
+    var cpuCount = require('os').cpus().length;
+
+    // Create a worker for each CPU
+    for (var i = 0; i < cpuCount; i += 1) {
+      cluster.fork();
+    }
+
+    // Listen for dying workers
+    cluster.on('exit', function(worker) {
+      // Replace the dead worker, we're not sentimental
+      console.log('Worker ' + worker.id + ' died :(');
+      cluster.fork();
+    });
+  } else {
+    appConfigure();
+    onUncaughtException();
+    onSigterm();
+    routesAttach();
+    createServer();
+  }
 }
 
 function appConfigure() {
