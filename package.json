@@ -5,7 +5,7 @@
     "meditation247.org",
     "www.meditation247.org"
   ],
-  "version": "0.1.0-4",
+  "version": "0.1.0-6",
   "private": true,
   "scripts": {
     "start": "bin/app.js"
