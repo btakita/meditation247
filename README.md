@@ -5,6 +5,7 @@ This is the app for http://meditation247.org.
 
 # TODO
 
+* https & spdy
 * WebRTC
 * Links to meditation leaders
 * Donation links

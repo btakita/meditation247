@@ -20,29 +20,44 @@
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 <body>
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-  your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
-  improve your experience.</p>
-<![endif]-->
+<!--[if IE]>
+<script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
 
-<!--<div class="header-container">-->
-<!--<header class="wrapper clearfix">-->
-<!--<h1 class="title">Meditation 247</h1>-->
-<!--<nav>-->
-<!--<ul>-->
-<!--<li><a href="#">Meditate</a></li>-->
-<!--</ul>-->
-<!--</nav>-->
-<!--</header>-->
-<!--</div>-->
+<style>
+  .chromeFrameInstallDefaultStyle {
+    width: 100%; /* default is 800px */
+    border: 5px solid blue;
+  }
+</style>
+
+<div id="prompt">
+</div>
+
+<script>
+  // The conditional ensures that this code will only execute in IE,
+  // Therefore we can use the IE-specific attachEvent without worry
+  window.attachEvent("onload", function() {
+    CFInstall.check({
+      mode: "inline", // the default
+      node: "prompt"
+    });
+  });
+</script>
+<![endif]-->
 
 <div class="main-container">
   <div class="main wrapper clearfix">
     <section>
-      <p>Welcome to meditation247.org. We are bootstrapping the site, so it is a bit raw. If you would like to lead a meditation, please say so :-)</p>
-      <p>To start broadcasting your zen state, sign in (as a guest), allow access to the camera and microphone through the dialog menus. Then click Start Broadcasting.</p>
-      <p>Please leave comments in the <a href="https://plus.google.com/communities/117355670486265058376" title="Meditation247 community" target="_blank">Meditation247 community page</a>. Namaste, Brian (aka binspace)</p>
+      <p>Welcome to meditation247.org. We are bootstrapping the site, so it is a bit raw. If you would like to lead a
+        meditation, please say so :-)</p>
+
+      <p>To start broadcasting your zen state, sign in (as a guest), allow access to the camera and microphone through
+        the dialog menus. Then click Start Broadcasting.</p>
+
+      <p>Please leave comments in the <a href="https://plus.google.com/communities/117355670486265058376"
+                                         title="Meditation247 community" target="_blank">Meditation247 community
+        page</a>. Namaste, Brian (aka binspace)</p>
     </section>
 
     <section>
@@ -53,11 +68,15 @@
 
     <section>
       <h2>Meditation Group Leader Schedule</h2>
-      <iframe src="https://www.google.com/calendar/embed?src=ltamcft8gksimuokm3g22n4gm4%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" height="600" frameborder="0" scrolling="no"></iframe>
+      <iframe
+        src="https://www.google.com/calendar/embed?src=ltamcft8gksimuokm3g22n4gm4%40group.calendar.google.com&ctz=America/Los_Angeles"
+        style="border: 0" height="600" frameborder="0" scrolling="no"></iframe>
 
       <p>
         Meditation247 is a worldwide community effort.
-        If you feel called to become a meditation leader, please make your request to the <a href="https://plus.google.com/communities/117355670486265058376" title="Meditation247 community" target="_blank">Meditation247 community page</a> to get on the calendar.
+        If you feel called to become a meditation leader, please make your request to the <a
+        href="https://plus.google.com/communities/117355670486265058376" title="Meditation247 community"
+        target="_blank">Meditation247 community page</a> to get on the calendar.
         30-60 minute slots are encouraged.
       </p>
     </section>
@@ -65,12 +84,6 @@
   <!-- #main -->
 </div>
 <!-- #main-container -->
-
-<!--<div class="footer-container">-->
-<!--<footer class="wrapper">-->
-<!--<h3>About Us</h3>-->
-<!--</footer>-->
-<!--</div>-->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
